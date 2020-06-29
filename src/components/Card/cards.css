@@ -1,0 +1,12 @@
+.infected{
+    color: blue;
+}
+
+.recovered{
+    color: green;
+}
+
+.deaths{
+    color: red;
+}
+

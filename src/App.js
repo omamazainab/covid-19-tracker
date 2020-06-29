@@ -1,31 +1,14 @@
-import React,{useEffect,useState} from 'react';
-import './App.css';
-
-function App() {
-
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-    // async function fetchRepos(){
-
-    //   const response = await fetch('https://api.cord19.vespa.ai/search'); 
-    //   const data = await response.json();
-    //   console.log(data);
-       
-    // }
-    // fetchRepos();
+import React from 'react'
+import {Cards} from './components/Card/Cards.js'
 
 
-  }
-  
-  , [])
-  
+const App = () => {
 
-  return (
-    <div className="App">
-      
-    </div>
-  );
+    return (
+        <div>
+            <Cards></Cards>
+        </div>
+    )
 }
 
 export default App;
