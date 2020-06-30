@@ -6,10 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
+import logo from '../../logo.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,14 +64,12 @@ export default function BackToTop(props) {
       <CssBaseline />
       <AppBar style={{ background: 'black' }} title={<img src="https://unsplash.it/40/40"/>}>
         <Toolbar>
-        <img src="logo.png" alt="logo" width="50" height="50" />
+        <img src={logo} alt="logo" width="50" height="50" />
           <Typography variant="h6">TraCOVID</Typography>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
-      <Container>
-        
-      </Container>
+      
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top" style={{ background: 'black' }}>
           <KeyboardArrowUpIcon style={{ color: 'white' }} />

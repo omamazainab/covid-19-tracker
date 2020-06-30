@@ -17,7 +17,6 @@ export const Cards = () => {
         async function getApi() {
             const {data} = await Axios.get("https://covid19.mathdro.id/api");
             setCard(data);
-            console.log(data)
         }
         getApi()
     }, []);
