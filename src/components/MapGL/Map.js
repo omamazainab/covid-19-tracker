@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import ReactMapGL from 'react-map-gl'
+import ReactMapGL, {Marker,Popup } from 'react-map-gl'
 import Axios from 'axios';
-
+import logo from '../../logo.png';
+import './Map.css'
 
 const Map = () => {
 
@@ -13,14 +14,20 @@ const Map = () => {
         zoom: 2
     });
 
+    const [coronacases, setCoronacases] = useState("")
+
     useEffect(() => {
         async function getApi() {
-            const {data} = await Axios.get("https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search");
-            console.log(data.data.rows[1].country_abbreviation);
+            const {data} = await Axios.get("https://www.trackcorona.live/api/countries");
+            setCoronacases(data);
+            
         }
         getApi()
     }, []);
 
+    if(!coronacases){
+        return 'loading'
+    }
     return (
         <div>
             <ReactMapGL 
@@ -31,7 +38,23 @@ const Map = () => {
                     viewport=> setViewport(viewport)
                 }
             >
-                Markers here
+                {
+                    
+                    coronacases.data.map( country => 
+                        <Marker
+                            key={country.country_code}
+                            latitude={country.latitude}
+                            longitude={country.longitude}
+                        >
+                            <button className="marker-button">
+                                <img src={logo} alt="marker" width="15" height="15"/>
+                            </button>
+                            
+                        </Marker>
+                    )
+                    
+                }
+
             </ReactMapGL>
         </div>
     )
