@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import CountUp from 'react-countup';
-import Container from '@material-ui/core/Container';
+import Tooltip from '@material-ui/core/Tooltip';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
@@ -31,14 +31,15 @@ export const Cards = () => {
     }
       return (
         <div>
-            <Container maxWidth="sm" className="card-container">
-                <Typography variant="h5" className="global-cases" align="center" >Total Global Cases</Typography>
+            <Tooltip title="Total global cases">
+                {/* <Typography variant="h5" className="global-cases" align="center" >Total Global Cases</Typography> */}
                     <Grid container spacing={4} justify="center">
                     <Grid item >
-                            <Card variant="outlined" >
-                                <CardContent >
-                                    <Typography color="textSecondary" align="center" >Infected</Typography>
-                                    <Typography variant="h5" className="infected" align="center">
+                            <Card className="card" style={{background:'blue' , color:'white' , width:'20vw' , height:'20vh'}} >
+                                <CardContent align="center">
+                                    <Typography color="textSecondary" align="center" style={{ color:'white'}} >Infected</Typography>
+                                    <i class="fa fa-ambulance" style={{color:'white', fontsize:'40px'}} ></i>
+                                    <Typography variant="h5" className="infected" align="center" style={{ color:'white'}}>
                                         <CountUp 
                                             start={0}
                                             end={card.confirmed.value}
@@ -46,15 +47,16 @@ export const Cards = () => {
                                             separator=","
                                         />
                                         </Typography>
-                                    <Typography color="textSecondary">{new Date(card.lastUpdate).toDateString()}</Typography>
+                                    <small>{new Date(card.lastUpdate).toDateString()}</small>
                                 </CardContent>
                             </Card>
                     </Grid>
                     <Grid item >
-                            <Card variant="outlined">
-                                <CardContent>
-                                    <Typography color="textSecondary" align="center">Recovered</Typography>
-                                    <Typography variant="h5" className="recovered" align="center">
+                            <Card  className="card" style={{background:'green', color:'white' , width:'20vw' , height:'20vh'}}>
+                                <CardContent align="center">
+                                    <Typography color="textSecondary" align="center" style={{ color:'white'}}>Recovered</Typography>
+                                    <i class="fa fa-heartbeat" style={{color:'white', fontsize:'40px'}} ></i>
+                                    <Typography variant="h5" className="recovered" align="center"  style={{ color:'white'}}>
                                         <CountUp 
                                             start={0}
                                             end={card.recovered.value}
@@ -62,15 +64,16 @@ export const Cards = () => {
                                             separator=","
                                         />
                                     </Typography>
-                                    <Typography color="textSecondary">{new Date(card.lastUpdate).toDateString()}</Typography>
+                                    <small>{new Date(card.lastUpdate).toDateString()}</small>
                                 </CardContent>
                             </Card>
                     </Grid>
                     <Grid item >
-                            <Card variant="outlined">
-                                <CardContent>
-                                    <Typography color="textSecondary" align="center">Deaths</Typography>
-                                    <Typography variant="h5" className="deaths" align="center">
+                            <Card  className="card" style={{background:'red', color:'white',  width:'20vw', height:'20vh'}}>
+                                <CardContent align="center">
+                                    <Typography color="textSecondary" align="center" style={{ color:'white'}}>Deaths</Typography>
+                                    <i class="fa fa-close" style={{color:'white', fontsize:'40px'}} ></i>
+                                    <Typography variant="h5" className="deaths" align="center"  style={{ color:'white'}}>
                                     <CountUp 
                                         start={0}
                                         end={card.deaths.value}
@@ -78,14 +81,14 @@ export const Cards = () => {
                                         separator=","
                                     />
                                     </Typography>
-                                    <Typography color="textSecondary" >{new Date(card.lastUpdate).toDateString()}</Typography>
+                                    <small>{new Date(card.lastUpdate).toDateString()}</small>
                                 </CardContent>
                             </Card>
                     </Grid>
                 </Grid>
-            </Container>
+            
 
-           
+                </Tooltip>
            
         </div>
     )
