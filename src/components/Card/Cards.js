@@ -35,7 +35,7 @@ export const Cards = () => {
                 {/* <Typography variant="h5" className="global-cases" align="center" >Total Global Cases</Typography> */}
                     <Grid container spacing={4} justify="center">
                     <Grid item >
-                            <Card className="card" style={{background:'blue' , color:'white' , width:'20vw' , height:'20vh'}} >
+                            <Card className="card" style={{background:'blue' , color:'white' }} >
                                 <CardContent align="center">
                                     <Typography color="textSecondary" align="center" style={{ color:'white'}} >Infected</Typography>
                                     <i class="fa fa-ambulance" style={{color:'white', fontsize:'40px'}} ></i>
@@ -52,7 +52,7 @@ export const Cards = () => {
                             </Card>
                     </Grid>
                     <Grid item >
-                            <Card  className="card" style={{background:'green', color:'white' , width:'20vw' , height:'20vh'}}>
+                            <Card  className="card" style={{background:'green', color:'white' }}>
                                 <CardContent align="center">
                                     <Typography color="textSecondary" align="center" style={{ color:'white'}}>Recovered</Typography>
                                     <i class="fa fa-heartbeat" style={{color:'white', fontsize:'40px'}} ></i>
@@ -69,7 +69,7 @@ export const Cards = () => {
                             </Card>
                     </Grid>
                     <Grid item >
-                            <Card  className="card" style={{background:'red', color:'white',  width:'20vw', height:'20vh'}}>
+                            <Card  className="card" style={{background:'red', color:'white'}}>
                                 <CardContent align="center">
                                     <Typography color="textSecondary" align="center" style={{ color:'white'}}>Deaths</Typography>
                                     <i class="fa fa-close" style={{color:'white', fontsize:'40px'}} ></i>
