@@ -62,7 +62,7 @@ export default function BackToTop(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar style={{ background: 'black' }} title={<img src="https://unsplash.it/40/40"/>}>
+      <AppBar style={{ background: 'black' }} title={<img src="https://unsplash.it/40/40" alt="logo"/>}>
         <Toolbar>
         <img src={logo} alt="logo" width="50" height="50" />
           <Typography variant="h6">TraCOVID</Typography>

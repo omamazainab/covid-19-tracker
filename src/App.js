@@ -12,7 +12,7 @@ const App = () => {
             <AppBar></AppBar>
             <Header></Header>
             <Cards></Cards>
-            {/* <Chart></Chart> */}
+            <Chart></Chart>
             <Map></Map>
         </div>
     )
