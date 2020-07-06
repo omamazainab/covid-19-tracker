@@ -2,3 +2,10 @@
     background-color: transparent;
     border: none;
 }
+
+.map-container{
+    margin: 20px auto;
+    width: 60vw;
+    height: 60vh;
+    border-radius: 50%;
+}
