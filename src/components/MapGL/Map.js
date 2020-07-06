@@ -3,7 +3,7 @@ import ReactMapGL, {Marker,Popup } from 'react-map-gl'
 import Axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import Tooltip from '@material-ui/core/Tooltip';
 import {Doughnut} from 'react-chartjs-2';
 import logo from '../../logo.png';
 import './Map.css'
@@ -39,6 +39,7 @@ const Map = () => {
         return (<div className="circular-progress"><CircularProgress /></div>)
     }
     return (
+        <Tooltip title="Tap on the marker">
         <div className="map-container">
             
             <ReactMapGL  className="map"
@@ -106,7 +107,9 @@ const Map = () => {
                     </Popup>
                 ):null }
             </ReactMapGL>
+            
         </div>
+        </Tooltip>
     )
 }
 
